@@ -14,6 +14,7 @@ const sortedKeys = (
 );
 
 
+// eslint-disable-next-line max-lines-per-function
 describe('classicist/index', () => {
 
 
@@ -72,7 +73,6 @@ describe('classicist/index', () => {
                 'a__b':    21, 'a--b': 22, 'b--a': 23,
                 'a__b--c': 31, 'a__c--b': 32,
             });
-
 
             const single = classicist({names, root: 'a', strat: 'single'});
             const double = classicist({names, root: 'a'});
