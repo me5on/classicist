@@ -1,6 +1,6 @@
 {
   "name": "@me5on/classicist",
-  "version": "0.0.1+10",
+  "version": "0.0.2+11",
   "description": "",
   "type": "module",
   "main": "./src/index.js",
@@ -40,16 +40,16 @@
     "@sloy/eslint-config-recommended": "^0.1.1",
     "@sloy/jest-setup": "^0.0.1",
     "eslint": "^8.6.0",
-    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-import": "^2.25.4",
     "eslint-plugin-simple-import-sort": "^7.0.0",
     "http-server": "^14.0.0",
     "husky": "^7.0.4",
     "jest": "^27.4.5",
     "nodemon": "^2.0.15",
-    "npm-check-updates": "^12.0.5"
+    "npm-check-updates": "^12.1.0"
   },
   "dependencies": {
-    "@me5on/fn": "^0.0.6",
+    "@me5on/fn": "^0.1.0",
     "@me5on/is": "^0.0.8",
     "@me5on/ob": "^0.1.0",
     "@me5on/to": "^0.1.0"
