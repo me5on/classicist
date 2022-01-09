@@ -1,6 +1,6 @@
 {
   "name": "@me5on/classicist",
-  "version": "0.0.2+11",
+  "version": "0.0.3+12",
   "description": "",
   "type": "module",
   "main": "./src/index.js",

@@ -10,7 +10,7 @@ const {get: {ok: get}} = OB;
 const double = (
 
     (names, key) => {
-        
+
         key = string(key);
         const val = string(get(names, key));
 
@@ -20,4 +20,5 @@ const double = (
 );
 
 
+// noinspection JSUnusedGlobalSymbols
 export default double;

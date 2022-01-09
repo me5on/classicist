@@ -2,6 +2,10 @@
 
 
 import {describe, expect, it} from '@jest/globals';
+import double from './strat/double.strat.js';
+import doubles from './strat/doubles.strat.js';
+import single from './strat/single.strat.js';
+import singles from './strat/singles.strat.js';
 import classicist from './index.js';
 
 
@@ -52,15 +56,33 @@ describe('classicist/index', () => {
         [void (1)],
         [null],
         [{}],
+        [{root: 'a'}],
+        [{strat: '', root: 'a'}],
         [{strat: 'single', root: 'a'}],
         [{strat: 'double', root: 'a'}],
+        [{strat: 'singles', root: 'a'}],
+        [{strat: 'doubles', root: 'a'}],
     ])(
         'returns a function with keys %p for %p',
         $ => expect(
             sortedKeys(classicist($)),
         ).toEqual(
-            ['b', 'e', 'm', 'em', 'me'].sort(),
+            ['o', 'b', 'e', 'm', 'em', 'me'].sort(),
         ),
+    );
+
+    it.each([
+        [`${double}`, {root: 'a'}],
+        [`${double}`, {strat: '', root: 'a'}],
+        [`${double}`, {strat: Symbol('another bad'), root: 'a'}],
+        [`${double}`, {strat: 'bad', root: 'a'}],
+        [`${single}`, {strat: 'single', root: 'a'}],
+        [`${double}`, {strat: 'double', root: 'a'}],
+        [`${singles}`, {strat: 'singles', root: 'a'}],
+        [`${doubles}`, {strat: 'doubles', root: 'a'}],
+    ])(
+        'picks the correct strat %p for %p',
+        expect((...$$) => `${classicist(...$$)}`).toMapExact,
     );
 
 
@@ -74,19 +96,19 @@ describe('classicist/index', () => {
                 'a__b--c': 31, 'a__c--b': 32,
             });
 
-            const single = classicist({names, root: 'a', strat: 'single'});
-            const double = classicist({names, root: 'a'});
+            const s = classicist({names, root: 'a', strat: 'single'});
+            const d = classicist({names, root: 'a'});
 
-            expect(single.b()).toBe('11');
-            expect(double.b()).toBe('a 11');
-            expect(single.e('b')).toBe('21');
-            expect(double.e('b')).toBe('a__b 21');
-            expect(single.m('b')).toBe('22');
-            expect(double.m('b')).toBe('a--b 22');
-            expect(single.em('b', 'c')).toBe('31');
-            expect(double.em('b', 'c')).toBe('a__b--c 31');
-            expect(single.me('c', 'b')).toBe('31');
-            expect(double.me('c', 'b')).toBe('a__b--c 31');
+            expect(s.b()).toBe('11');
+            expect(d.b()).toBe('a 11');
+            expect(s.e('b')).toBe('21');
+            expect(d.e('b')).toBe('a__b 21');
+            expect(s.m('b')).toBe('22');
+            expect(d.m('b')).toBe('a--b 22');
+            expect(s.em('b', 'c')).toBe('31');
+            expect(d.em('b', 'c')).toBe('a__b--c 31');
+            expect(s.me('c', 'b')).toBe('31');
+            expect(d.me('c', 'b')).toBe('a__b--c 31');
 
         },
     );

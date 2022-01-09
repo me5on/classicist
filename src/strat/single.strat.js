@@ -13,4 +13,5 @@ const single = (
 );
 
 
+// noinspection JSUnusedGlobalSymbols
 export default single;
