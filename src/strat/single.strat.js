@@ -1,14 +1,13 @@
 import OB from '@me5on/ob';
-import TO from '@me5on/to';
+import s from '../util/stringify.util.js';
 
 
-const {string} = TO;
 const {get: {ok: get}} = OB;
 
 
 const single = (
 
-    (names, key) => string(get(names, key)).trim()
+    (names, key, prefix = '') => s(get(names, s(prefix) + key))
 
 );
 

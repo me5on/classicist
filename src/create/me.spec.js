@@ -13,7 +13,7 @@ describe('classicist/create/me', () => {
     );
 
     const SPACE = ' ';
-    const cn = $ => $;
+    const cn = (key, prefix) => prefix + key;
     const bad = () => null;
 
     it.each([

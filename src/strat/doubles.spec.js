@@ -37,6 +37,7 @@ describe('classicist/strat/doubles', () => {
         ['a__b--c 31', CN, 'a__b--c'],
         ['a__b--c 31 b--a 23 c 13 a__c--b 32', CN, 'a__b--c b--a c a__c--b'],
         ['b--a 23 a--b 22', CN, '  b--a   a--b  '],
+        ['a__c a__c--b 32 a__b--c 31', CN, 'c c--b b--c', 'a__'],
     ])(
         'gets doubles %p from %p',
         expect(doubles).toMapExact,

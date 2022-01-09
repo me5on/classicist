@@ -16,7 +16,8 @@ const em = (
 
         return s(root && element && modifier && x(
             cn,
-            root + C.dunder + element + C.dodash + modifier,
+            element + C.dodash + modifier,
+            root + C.dunder,
         ));
     }
 

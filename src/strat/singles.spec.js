@@ -36,6 +36,7 @@ describe('classicist/strat/singles', () => {
         ['1', {a: 1}, 'a'],
         ['31 23 13 32', CN, 'a__b--c b--a c a__c--b'],
         ['23 22', CN, '  b--a   a--b  '],
+        ['32 31', CN, 'c c--b b--c', 'a__'],
     ])(
         'gets singles %p from %p',
         expect(singles).toMapExact,

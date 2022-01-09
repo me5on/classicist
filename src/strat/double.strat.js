@@ -1,6 +1,7 @@
 import OB from '@me5on/ob';
 import TO from '@me5on/to';
 import C from '../etc/general.const.js';
+import s from '../util/stringify.util.js';
 
 
 const {string} = TO;
@@ -9,12 +10,12 @@ const {get: {ok: get}} = OB;
 
 const double = (
 
-    (names, key) => {
+    (names, key, prefix = '') => {
 
-        key = string(key);
+        key = s(prefix) + string(key);
         const val = string(get(names, key));
 
-        return (key + C.space + val).trim();
+        return s(key + C.space + val);
     }
 
 );

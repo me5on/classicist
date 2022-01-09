@@ -12,7 +12,8 @@ const m = (
 
         return s(root && modifier && x(
             cn,
-            root + C.dodash + modifier,
+            modifier,
+            root + C.dodash,
         ));
 
     }

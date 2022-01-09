@@ -12,7 +12,8 @@ const e = (
 
         return s(root && element && x(
             cn,
-            root + C.dunder + element
+            element,
+            root + C.dunder,
         ));
     }
 
