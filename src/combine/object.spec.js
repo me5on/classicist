@@ -26,7 +26,7 @@ describe('classicist/combine/object', () => {
         ['a b', {z: 0, a: true, b: 'asdf', c: ''}],
         ['a b', {z: 0, a: false, 'a b': Symbol(''), c: null}],
     ])(
-        'gets b %p from %p',
+        'gets %p from %p',
         expect(object).toMapExact,
     );
 

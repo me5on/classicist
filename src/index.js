@@ -1,6 +1,7 @@
 /* eslint-disable import/max-dependencies */
 import FN from '@me5on/fn';
 import OB from '@me5on/ob';
+import a from './combine/array.combine.js';
 import o from './combine/object.combine.js';
 import b from './create/b.create.js';
 import e from './create/e.create.js';
@@ -49,6 +50,7 @@ const classicist = (
         return Object.assign(
             cn,
             {
+                a,
                 o,
                 b:  tie(b, cn, root),
                 e:  tie(e, cn, root),

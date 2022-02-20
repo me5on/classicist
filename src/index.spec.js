@@ -67,7 +67,7 @@ describe('classicist/index', () => {
         $ => expect(
             sortedKeys(classicist($)),
         ).toEqual(
-            ['o', 'b', 'e', 'm', 'em', 'me'].sort(),
+            ['a', 'o', 'b', 'e', 'm', 'em', 'me'].sort(),
         ),
     );
 
